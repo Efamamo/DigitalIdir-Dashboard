@@ -14,6 +14,7 @@ import {
   faMonument,
   faExchangeAlt,
   faMinus,
+  faAngleRight,
 } from '@fortawesome/free-solid-svg-icons';
 import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
@@ -38,7 +39,8 @@ library.add(
   faBox,
   faMonument,
   faExchangeAlt,
-  faMinus
+  faMinus,
+  faAngleRight
 );
 
 export default defineNuxtPlugin((nuxtApp) => {

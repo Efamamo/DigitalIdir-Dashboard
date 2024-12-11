@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-on:click="toggleDropdown">
     <div
       class="pl-2 py-3.5 cursor-pointer flex justify-between items-center pr-3"
     >
@@ -8,7 +8,7 @@
         <h3 class="text-gray-600 text-sm">{{ name }}</h3>
       </div>
 
-      <div v-on:click="toggleDropdown">
+      <div>
         <FontAwesomeIcon
           v-if="!show"
           icon="plus"
@@ -22,9 +22,15 @@
       </div>
     </div>
     <div v-show="show" class="text-sm pl-6">
-      <p>Category 1</p>
-      <p>Category 2</p>
-      <p>Category 2</p>
+      <nuxt-link
+        :to="link.ref"
+        v-for="link in links"
+        :key="link.name"
+        class="flex gap-3 items-center pb-3"
+      >
+        <FontAwesomeIcon icon="angle-right" class="text-gray-600 text-xs" />
+        <p class="text-gray-600 text-sm">{{ link.name }}</p>
+      </nuxt-link>
     </div>
   </div>
 </template>
@@ -34,5 +40,5 @@ const toggleDropdown = () => {
   show.value = !show.value;
 };
 let show = ref(false);
-const { name, icon } = defineProps(['name', 'icon']);
+const { name, icon, links } = defineProps(['name', 'icon', 'links']);
 </script>
