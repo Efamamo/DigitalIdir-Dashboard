@@ -30,9 +30,17 @@
 </template>
 
 <script setup>
+useHead({
+  title: 'DigitalIdir | Login',
+});
+
 const handleSubmit = () => {
   window.location.href = '/dashboard';
 };
+
+definePageMeta({
+  layout: 'login',
+});
 </script>
 
 <style scoped></style>

@@ -4,6 +4,10 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+useHead({
+    title: "DigitalIdir | Dashboard"
+})
+</script>
 
 <style scoped></style>
